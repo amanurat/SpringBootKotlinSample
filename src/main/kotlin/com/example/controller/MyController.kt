@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 
 @Controller
-class MyController @Autowired constructor(
-        private val messageService: MessageService
-){
+class MyController {
+
+    @Autowired
+    private lateinit var messageService: MessageService
 
     @RequestMapping(value = "/", method = arrayOf(RequestMethod.GET))
     fun showIndex(model: Model): String {
